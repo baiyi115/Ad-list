@@ -26,4 +26,4 @@ https://ghfast.top/raw.githubusercontent.com/baiyi115/Adlist/refs/heads/main/adg
 
 个人项目，如有误杀可以自己加白名单
 
-#### Ciallo～(∠・ω< )⌒★
+**Ciallo～(∠・ω< )⌒★**

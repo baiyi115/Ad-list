@@ -1,26 +1,23 @@
 import requests
 from datetime import datetime
 
-# 1. 定义你的规则列表 URLs
 list_urls = [
     "https://ghfast.top/raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
     "https://ruleset.skk.moe/Internal/reject-adguardhome.txt",
     "https://adrules.top/dns.txt"
 ]
 
-all_rules = set() # 使用 set 自动去重
+all_rules = set()
 
-# 2. 循环获取和处理
 for url in list_urls:
     try:
         response = requests.get(url)
-        response.raise_for_status() # 如果请求失败则抛出异常
+        response.raise_for_status() 
 
         lines = response.text.splitlines() 
 
         for line in lines:
             line = line.strip() 
-            # 过滤掉注释、空行和无效规则
             if line and not line.startswith('#') and not line.startswith('!'):
                 all_rules.add(line)
         
