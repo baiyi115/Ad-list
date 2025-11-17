@@ -39,4 +39,4 @@ with open("adguard_mixed_list.txt", "w") as f:
     for rule in sorted_rules:
         f.write(rule + "$dnsrewrite=NOERROR;;\n")
 
-print(f"\n 整合完毕！总共 {len(all_rules)} 条规则已保存至 adguard_mixed_list.txt")
+print(f"\n 共 {len(all_rules)} 条规则已保存至 adguard_mixed_list.txt")
