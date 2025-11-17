@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/baiyi115/Ad-list/refs/heads/main/adguard_mixed
 订阅链接（访问不了可以用这个）
 
 ```
-https://ghfast.top/raw.githubusercontent.com/baiyi115/Adlist/refs/heads/main/adguard_mixed_list.txt
+https://ghfast.top/raw.githubusercontent.com/baiyi115/Ad-list/refs/heads/main/adguard_mixed_list.txt
 ```
 
 ------
