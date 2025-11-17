@@ -1,6 +1,6 @@
 # Ad-list
 
-个人自用的[AdGuardHome](https://github.com/AdguardTeam/AdGuardSDNSFilter)黑名单规则
+个人自用的[AdGuardHome](https://github.com/AdguardTeam/AdGuardHome)黑名单规则
 
 规则来源：
 
