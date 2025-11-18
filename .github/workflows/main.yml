@@ -3,6 +3,9 @@ name: build Rule
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
     update-rules:
       runs-on: ubuntu-latest
@@ -23,9 +26,9 @@ jobs:
             mv *.txt out/
         - name: git push
           run: |
-            git config --local user.name "github-actions[bot]"
-            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git clone "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" push
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
             cp out/*.txt push/
             cd push
             git add *.txt
