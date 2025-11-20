@@ -37,6 +37,6 @@ with open("adguard_mixed_list.txt", "w") as f:
         f.write(f"! {url}\n")
     f.write("\n")
     for rule in sorted_rules:
-        f.write(rule + "$dnsrewrite=NOERROR;;\n")
+        f.write(rule + "\n")
 
 print(f"\n 共 {len(all_rules)} 条规则已保存至 adguard_mixed_list.txt")
