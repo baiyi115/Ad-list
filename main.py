@@ -43,34 +43,29 @@ def get_adguard_mixed_list():
 
 def extract_domains(file_path):
     domains = []
-    keywords=[]
+    keywords = []
     with open(file_path, "r") as f:
         for line in f:
             line = line.strip()
-            if not line or re.search(r'^[!@#]', line):
+            if not line or re.search(r'^[!@#]|[*$~]', line):
                 continue
             match = re.search(r"\|\|([a-zA-Z0-9.-]+)\^", line)
             if match:
-                if '*' in line:
-                    keywords.append(line)
-                else:
-                    domains.append(match.group(1))
-    return sorted(domains),sorted(keywords)
+                domains.append(match.group(1))
+    return sorted(domains)
 
-def mosdns_rules(domains,keywords):
+def mosdns_rules(domains):
     with open("mosdns_mixed_list.txt", "w") as f:
         f.write("# tittle: mosdns_mixed_list\n")
         f.write(f"# build time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"# total: {len(domains+keywords)}\n")
+        f.write(f"# total: {len(domains)}\n")
         f.write(f"# homepage: https://github.com/baiyi115/Ad-list\n")
         f.write(f"# License: https://github.com/baiyi115/Ad-list/blob/main/LICENSE\n")
         for domain in domains:
             f.write("domain:" + domain + "\n")
-        for keyword in keywords:
-            f.write("keyword:"+ keyword + "\n")
-        print(f"\n 共 {len(domains+keywords)} 条规则已保存至 mosdns_mixed_list")
+        print(f"\n 共 {len(domains)} 条规则已保存至 mosdns_mixed_list")
 
 if __name__ == "__main__":
     get_adguard_mixed_list()
-    domains,keywords=extract_domains("adguard_mixed_list.txt")
-    mosdns_rules(domains,keywords)
+    domains=extract_domains("adguard_mixed_list.txt")
+    mosdns_rules(domains)
