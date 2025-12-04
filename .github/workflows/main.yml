@@ -1,6 +1,11 @@
 name: build Rule
 
 on:
+  schedule:
+    - cron: '0 22 * * *'  # Every day at 06:00 GMT
+  push:
+    branches:
+      - build
   workflow_dispatch:
 
 permissions:
@@ -14,6 +19,8 @@ jobs:
       steps:
         - name: Checkout repository
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
         - name: Set up Python
           uses: actions/setup-python@v5
           with:
@@ -33,4 +40,4 @@ jobs:
             cd push
             git add *.txt
             git commit -m "Update Rules at $(date +'%Y-%m-%d %H:%M')"
-            git push origin main
+            git push --set-upstream origin main
