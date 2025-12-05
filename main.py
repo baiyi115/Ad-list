@@ -65,7 +65,19 @@ def mosdns_rules(domains):
             f.write("domain:" + domain + "\n")
         print(f"\n 共 {len(domains)} 条规则已保存至 mosdns_mixed_list")
 
+def smartdns_rules(domains):
+    with open("smartdns_mixed_list.txt", "w") as f:
+        f.write("# tittle: smartdns_mixed_list\n")
+        f.write(f"# build time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"# total: {len(domains)}\n")
+        f.write(f"# homepage: https://github.com/baiyi115/Ad-list\n")
+        f.write(f"# License: https://github.com/baiyi115/Ad-list/blob/main/LICENSE\n")
+        for domain in domains:
+            f.write("address /" + domain + "/#\n")
+        print(f"\n 共 {len(domains)} 条规则已保存至 smartdns_mixed_list")
+
 if __name__ == "__main__":
     get_adguard_mixed_list()
     domains=extract_domains("adguard_mixed_list.txt")
     mosdns_rules(domains)
+    smartdns_rules(domains)
