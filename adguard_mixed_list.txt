@@ -1,8 +1,7 @@
 ! tittle: AdGuard mixed list
-! build time: 2025-12-13 17:26:44
+! build time: 2025-12-13 17:30:59
 ! total: 149829
 ! homepage: https://github.com/baiyi115/Ad-list! License: https://github.com/baiyi115/Ad-list/blob/main/LICENSE
-
 ||*-ad-sign.byteimg.com^
 ||*-ad.a.yximgs.com^
 ||*-applog.fqnovel.com^
