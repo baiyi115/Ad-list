@@ -33,8 +33,8 @@ def get_adguard_mixed_list():
         f.write("! tittle: AdGuard mixed list\n")
         f.write(f"! build time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"! total: {len(all_rules)}\n")
-        f.write(f"! homepage: https://github.com/baiyi115/Ad-list")
-        f.write(f"! License: https://github.com/baiyi115/Ad-list/blob/main/LICENSE")
+        f.write(f"! homepage: https://github.com/baiyi115/Ad-list\n")
+        f.write(f"! License: https://github.com/baiyi115/Ad-list/blob/main/LICENSE\n")
         f.write("\n")
         for rule in sorted_rules:
             f.write(rule + "\n")
