@@ -10,6 +10,8 @@
 
 [Cats-Team/AdRules](https://github.com/Cats-Team/AdRules)
 
+[AdGuard DNS filter](https://github.com/AdguardTeam/AdGuardSDNSFilter)
+
 订阅链接
 
 ```
