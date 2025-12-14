@@ -5,7 +5,8 @@ def get_adguard_mixed_list():
     list_urls = [
         "https://ghfast.top/raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
         "https://ruleset.skk.moe/Internal/reject-adguardhome.txt",
-        "https://adrules.top/dns.txt"
+        "https://adrules.top/dns.txt",
+        "https://raw.githubusercontent.com/AdguardTeam/AdGuardDNSFilter/master/Filters/filter.txt",
     ]
 
     all_rules = set()
